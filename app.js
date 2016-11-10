@@ -10,6 +10,8 @@ app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
 nunjucks.configure('views', {noCache: true});
 
+app.use(express.static('public'));
+app.use(volleyball);
 app.use('/', routes);
 
 /*const special = express.Router();
